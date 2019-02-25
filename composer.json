@@ -15,7 +15,7 @@
     "autoload": {
 	
         "psr-4": {
-            "Cubet\\": "vendor" 
+            "Cubet\\": "php_my_classes" 
         },
 	
 		"classmap": [

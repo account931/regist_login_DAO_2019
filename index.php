@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Data Object Access">
+  <meta name="keywords" content="registration">
   <meta name="author" content="">
 
   <title>Sign up/Sign in(DAO)</title>
@@ -15,6 +16,9 @@
 
   <!-- Custom styles for this template -->
   <link href="css/template_css/scrolling-nav.css" rel="stylesheet"><!--theme css-->
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -64,9 +68,10 @@
 		  
 		  //Class that uses PSR-4 namespace. It is set in composer.json in {"psr-4": {}}
 		   //Namespace variant_1
-			//use Cubet\ExampleClass as Dima;
-			$class = new Cubet\ExampleClass();
-			//$class = new Dima();//new Forkk\ExampleClass();
+			use Cubet\ExampleClass as Dima;
+			//$class = new Cubet\ExampleClass();
+			
+			$class = new Dima();//new Forkk\ExampleClass();
 			$class->example_method();  //echo Namespace_1 is OK
 		  ?>
 		 

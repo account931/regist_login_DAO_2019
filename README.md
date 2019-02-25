@@ -1,5 +1,5 @@
 # Application that makes Registration and login authentication.
-#Uses : DOA, singletone, PDO, PSR-4 autoload,
+#Uses : DOA, singletone, PDO, PSR-4 autoload, namespace, composer, npm, browserify, wotchify, CommonJS, Git, GitHub
 
 
 
