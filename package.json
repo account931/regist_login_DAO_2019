@@ -3,28 +3,31 @@
   "version": "1.0.0",
   "description": "DAO test",
   "main": "js/common_js/main.js",
-  
   "scripts": {
     "test": "runIT",
     "build-js": "browserify js/my_js/common_js_modules/main.js > js/my_js/dist/js/bundle_js.js -d",
     "watch-js": "watchify   js/my_js/common_js_modules/main.js -o js/my_js/dist/js/bundle_js.js -dv"
   },
-  
   "keywords": [
     "data access object",
     "sign up"
   ],
   "author": "Dima",
   "license": "ISC",
-  
   "dependencies": {
     "bootstrap": "4.2.1",
     "jquery": "3.3.1",
     "jquery.easing": "^1.4.1",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.14.7",
+    "vinyl-source-stream": "^2.0.0"
   },
   "devDependencies": {
     "browserify": "latest",
-    "watchify": "latest"
+    "watchify": "latest",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "vinyl-buffer": "^1.0.1",
+    "browser-sync": "^2.26.3"
   }
 }

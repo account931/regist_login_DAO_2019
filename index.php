@@ -1,3 +1,6 @@
+<?php
+//error_reporting(0);    //0 = error reporting is switched OFF 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,14 +19,15 @@
 
   <!-- Custom styles for this template -->
   <link href="css/template_css/scrolling-nav.css" rel="stylesheet"><!--theme css-->
+  <link href="css/my_css/mycss.css" rel="stylesheet"><!--my css-->
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
 </head>
 
-<body id="page-top">
-
+<body id="page-top" >
+<div id="all" class="animate-bottom">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
@@ -33,11 +37,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+		<!-- explode("?",$_SERVER['REQUEST_URI'])[0] gets the base folder without $GET(after ?) -->
+		<!-- $GET name must be the same as a relevant view file in php_my_classes/Views -->
+		<li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>">Home</a>
+          </li>
+		  
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="">Sign in</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>?login">Sign in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="">Sign up</a>
+            <a class="nav-link js-scroll-trigger" href=" <?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>?register">Sign up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="">About</a>
@@ -61,18 +71,28 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Sign up/Sign in(DAO)</h2>
+          <!--<h2>Sign up/Sign in(DAO)</h2>-->
          
 		  <?php
 		  require 'vendor/autoload.php'; //Composer autoload
 		  
 		  //Class that uses PSR-4 namespace. It is set in composer.json in {"psr-4": {}}
-		   //Namespace variant_1
+		   //Namespace variant_1 TEST
 			use Cubet\ExampleClass as Dima;
 			//$class = new Cubet\ExampleClass();
-			
 			$class = new Dima();//new Forkk\ExampleClass();
 			$class->example_method();  //echo Namespace_1 is OK
+			//END Namespace variant_1 TEST
+			
+			
+			//Main Controller---------------------
+			use ControllerName\ControllerX;
+			$controller_main = new ControllerX();
+			//$mainContent = $controller_main->getTemplateR('php_my_classes/View/main.php');
+		    //echo $mainContent;
+			$controller_main->getRoute();
+			
+
 		  ?>
 		 
         </div> <!-- End <div class="col-lg-8 mx-auto" -->
@@ -110,7 +130,7 @@
   </footer>
 
   
-  
+<div/><!--<div id="all">-->
   <!-- Bootstrap core JavaScript -->
   <script src="template_vendor/jquery/jquery.min.js"></script>
   <script src="template_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

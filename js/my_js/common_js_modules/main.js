@@ -1,14 +1,20 @@
 
 var test_file = require('./modules/test.js');
-
+var loader_file = require('./modules/loader.js');
 
 
 
 
 $(document).ready(function(){
 
-    var testt = new test_file();
-	testt.loadExampleCoordinates();
+    //var test = new test_file();
+	//test.loadExampleCoordinates();
+	
+	
+	
+   //preloader
+    var loaderX = new loader_file();
+	loaderX.loadLoader();
 	
 	
 	
