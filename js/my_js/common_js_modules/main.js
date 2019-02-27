@@ -1,6 +1,8 @@
 
 var test_file = require('./modules/test.js');
-var loader_file = require('./modules/loader.js');
+var loader_file = require('./modules/loader.js');//Loader
+var regExp_file = require('./modules/regexp_validation.js');//reg exp validation for registration
+
 
 
 
@@ -16,11 +18,20 @@ $(document).ready(function(){
     var loaderX = new loader_file();
 	loaderX.loadLoader();
 	
+	//RegExp validation for registartion
+	var regExpCheck = new regExp_file();
+	regExpCheck.checkField();
 	
 	
 	
 	
-
+	
+	
+	
+	
+	
+	
+//NOT USED BELOW!!!!!!!!!!!!!!!!!!
 //Click SPLIT  Button
 // **************************************************************************************
 // **************************************************************************************

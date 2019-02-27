@@ -17,9 +17,10 @@
   <!-- Bootstrap core CSS -->
   <link href="template_vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/template_css/scrolling-nav.css" rel="stylesheet"><!--theme css-->
-  <link href="css/my_css/mycss.css" rel="stylesheet"><!--my css-->
+  <!-- CSS STYLES -->
+  <link href="css/template_css/scrolling-nav.css" rel="stylesheet"><!-- template theme provided css-->
+  <link href="css/my_css/mycss.css" rel="stylesheet"><!--my own css-->
+  <link href="css/my_css/loader.css" rel="stylesheet"><!--my own css-->
   
   <!--Favicon-->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -36,9 +37,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+	  
+	  <ul class="navbar-nav ml-auto">
 		<!-- explode("?",$_SERVER['REQUEST_URI'])[0] gets the base folder without $GET(after ?) -->
 		<!-- $GET name must be the same as a relevant view file in php_my_classes/Views -->
+		
 		<li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>">Home</a>
           </li>
@@ -53,6 +56,8 @@
             <a class="nav-link js-scroll-trigger" href="">About</a>
           </li>
         </ul>
+	  
+        
       </div>
     </div>
   </nav>
@@ -86,8 +91,10 @@
 			
 			
 			//Main Controller---------------------
+			
 			use ControllerName\ControllerX;
 			$controller_main = new ControllerX();
+			
 			//$mainContent = $controller_main->getTemplateR('php_my_classes/View/main.php');
 		    //echo $mainContent;
 			$controller_main->getRoute();
@@ -131,17 +138,18 @@
 
   
 <div/><!--<div id="all">-->
+
+  <!------ JavaScript ------------->
   <!-- Bootstrap core JavaScript -->
   <script src="template_vendor/jquery/jquery.min.js"></script>
   <script src="template_vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
   
-
   <!-- Plugin JavaScript -->
   <script src="template_vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom JavaScript for this theme -->
+  <!-- Custom provided JavaScript for this template theme -->
   <script src="js/template_js/scrolling-nav.js"></script>
   
    <!-- MY JS Browserify bundle -->

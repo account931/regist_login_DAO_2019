@@ -1,5 +1,5 @@
 # Application that makes Registration and login authentication.
-#Uses : DOA, singletone, PDO, PSR-4 autoload, namespace, composer, npm, browserify, wotchify, CommonJS, Git, GitHub
+#Uses : DOA, singletone, PDO, PSR-4 autoload, namespace, composer, npm, browserify, watchify, Gulp, CommonJS, Git, GitHub
 
 
 
@@ -45,6 +45,26 @@ It says that non PSR-4 classes must be found in folder {library}
 6. CLI-> $ composer dump-autoload -o      -> This CLI must be run after each composer edits to update the autoload.
 
 =========================================================
+
+
+
+
+
+
+
+
+=========================================================
+PURE CSS LOADER
+Pure CSS loader, does not need placing any loader <div> code to index.php, just to javascript, \js\my_js\common_js_modules\modules\loader.js
+1. In index.php wrap all content to some div, i.e <div id="all"> + add class="". This class will be used for animated div re-appearance.
+2. Add css, by default <div id="all"> display:none.
+3. In JS(\js\my_js\common_js_modules\modules\loader.js) add code, which append <div id="loaderX"> : {this.appendLoaderDiv();}
+ Then, to same js file add logic that operates loader fadingOut: {var myVar = setTimeout(this.showPage, 1000);}
+ 
+==========================================================
+
+
+
 
 
 
