@@ -2,7 +2,7 @@
 var test_file = require('./modules/test.js');
 var loader_file = require('./modules/loader.js');//Loader
 var regExp_file = require('./modules/regexp_validation.js');//reg exp validation for registration
-
+var password_match_check_file = require('./modules/password_compare_validation.js');//compare 2 passwords are the same
 
 
 
@@ -22,7 +22,9 @@ $(document).ready(function(){
 	var regExpCheck = new regExp_file();
 	regExpCheck.checkField();
 	
-	
+	//compare if 2 passwords in registartion are the same
+	var passEqualCheck = new password_match_check_file();
+	passEqualCheck.checkPasswords('submitBTN');
 	
 	
 	

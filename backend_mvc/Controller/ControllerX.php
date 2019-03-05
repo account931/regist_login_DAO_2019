@@ -6,7 +6,7 @@
  class ControllerX
  {
 	
-	
+	//used in getRoute()
     // **************************************************************************************
     // **************************************************************************************
     // **                                                                                  **
@@ -32,7 +32,7 @@
 	
 	
 	
-	//call a relevant View template, temeplate name and $_GET must be set equal
+	//call a relevant View template, temeplate name and $_GET must be set equal, uses getTemplateR($fileR)
 	// **************************************************************************************
     // **************************************************************************************
     // **                                                                                  **
@@ -41,11 +41,11 @@
     {
 		//if no GET display main
 		if(empty($_GET)){ 
-			echo $this->getTemplateR('php_my_classes/View/main.php');
+			echo $this->getTemplateR('backend_mvc/View/main.php');
 		} else{ 
 		    try{
 		        $getName = explode("?",$_SERVER['REQUEST_URI'])[1]; //gets parametr name after {?}
-			    echo $this->getTemplateR('php_my_classes/View/' . $getName . '.php');
+			    echo $this->getTemplateR('backend_mvc/View/' . $getName . '.php');
 			} catch(Exception $e){
 				echo 3333;
 				echo 'Message: ' .$e->getMessage();

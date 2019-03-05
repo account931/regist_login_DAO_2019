@@ -10,6 +10,7 @@ function loader(){
   }
   
   
+   //Hides loader in 1 sec
    this.showPage = function(){   
       document.getElementById("loaderX").style.display = "none"; //hides loader
       document.getElementById("all").style.display = "block";    //show div id="all"

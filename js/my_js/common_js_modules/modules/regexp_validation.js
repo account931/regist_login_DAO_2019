@@ -18,14 +18,14 @@ function regexp_validation(){
 	  //Creates an object of regexp_validation_slave.js
 	  var validateSlave = new regExp_file_slave();
 	  
-	  //check Login regExp
+	  //check Login regExp on input change
       $("#login").on('input', function(e) { 
 	      //calling the slave function myValidate() from regexp_validation_slave.js
 	      validateSlave.myValidate($(this), this.id, RegExp_login, 'submitBTN', '   not a valid login ', e);
 	      //args($this, $this.id, RegExp, button to disable, message to show, event)
       });
 	  
-	   //check Name regExp
+	   //check Name regExp on input change
 	   $("#name").on('input', function(e) { 
 	      //calling the slave function myValidate() from regexp_validation_slave.js
 	      var validateSlave = new regExp_file_slave();
@@ -33,7 +33,7 @@ function regexp_validation(){
 	      //args($this, $this.id, RegExp, button to disable, message to show, event)
       });
 	  
-	  //check Emai regExp
+	  //check Emai regExp on input change
 	   $("#email").on('input', function(e) { 
 	      //calling the slave function myValidate() from regexp_validation_slave.js
 	      var validateSlave = new regExp_file_slave();

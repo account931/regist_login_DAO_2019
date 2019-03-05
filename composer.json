@@ -15,8 +15,9 @@
     "autoload": {
 	
         "psr-4": {
-            "Cubet\\": "php_my_classes" ,
-			"ControllerName\\": "php_my_classes/Controller/"
+            "Cubet\\": "backend_mvc" ,
+			"ControllerName\\": "backend_mvc/Controller/",
+			"Namespace2\\": "backend_mvc/Classes/"
         },
 	
 		"classmap": [

@@ -1,0 +1,10 @@
+#Options +SymLinksIfOwnerMatch
+#RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#RewriteCond %{HTTP_HOST} ^[^www\.].*$ [NC]
+#RewriteRule ^regist_login_DAO_2019/([a-z]*) /?login=$1 [L]
+
+

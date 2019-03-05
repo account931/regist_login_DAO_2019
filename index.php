@@ -47,13 +47,13 @@
           </li>
 		  
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>?login">Sign in</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>?login=on">Sign in</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href=" <?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>?register">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="">About</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>login">Test SEF</a>
           </li>
         </ul>
 	  
@@ -82,6 +82,7 @@
 		  require 'vendor/autoload.php'; //Composer autoload
 		  
 		  //Class that uses PSR-4 namespace. It is set in composer.json in {"psr-4": {}}
+		  
 		   //Namespace variant_1 TEST
 			use Cubet\ExampleClass as Dima;
 			//$class = new Cubet\ExampleClass();
@@ -90,16 +91,20 @@
 			//END Namespace variant_1 TEST
 			
 			
-			//Main Controller---------------------
-			
+			//Main Controller, triggering {getRoute()}, which uses {getTemplateR($fileR)} ---------------------
 			use ControllerName\ControllerX;
 			$controller_main = new ControllerX();
-			
 			//$mainContent = $controller_main->getTemplateR('php_my_classes/View/main.php');
 		    //echo $mainContent;
+			//Main Controller Router, decides which view template to include
 			$controller_main->getRoute();
+			//END Main Controller, triggering {getRoute()}, which uses {getTemplateR($fileR)} ---------------------
 			
-
+			//DB Singletone Connection
+			use Namespace2\Connection;
+            $connect = new Connection();
+			$connect->test();
+			//END DB Singletone Connection
 		  ?>
 		 
         </div> <!-- End <div class="col-lg-8 mx-auto" -->

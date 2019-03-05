@@ -5,8 +5,8 @@
 
 
 =========================================================
-BROWSERIFY
-CLI-> browserify js/my_js/common_js_modules/main.js > js/dist/js/bundle_js.js -d
+BROWSERIFY, for more details see {account931/git-browserify-yii_commands_manuals/npm_browserify_commands.txt}
+CLI-> browserify js/my_js/common_js_modules/main.js > js/my_js/dist/js/bundle_js.js -d
 CLI-> npm run watch-js    =watch changes without rebuild
                                          
 add to packagist.json
@@ -25,13 +25,15 @@ add to packagist.json
 
 
 
-
+==========================================================
+Php NAMESPACE, see {account931/miscellaneous_2018/namespace_php/}
+==========================================================
 
 
 
 
 =========================================================
-Composer autoloader
+COMPOSER AUTOLOADER, for more details see {account931/miscellaneous_2018/composer_autoload/ReadMe.txt}
 This is Composer autoloader working example.
 How to:
 1."CLI-> composer init". It creates composer.json in folder.
