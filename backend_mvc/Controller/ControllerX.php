@@ -22,6 +22,7 @@
             return $htmlR;
 		} else {
 			echo "<p class='red'>PAGE DOES NOT EXIST</p>";
+			echo "<img class='img-danger' src='images/danger1.jpg' alt='not found'/>";
 			//throw new Exception("Value must be 1 or below");
 		}
     }

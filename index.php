@@ -1,5 +1,8 @@
 <?php
 //error_reporting(0);    //0 = error reporting is switched OFF 
+ini_set('display_errors',1);
+error_reporting(E_ALL | E_STRICT);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +46,7 @@
 		<!-- $GET name must be the same as a relevant view file in php_my_classes/Views -->
 		
 		<li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0]; ?>">Home</a>
+            <a class="nav-link js-scroll-trigger" href="<?php echo explode("?",$_SERVER['REQUEST_URI'])[0];?>">Home</a>
           </li>
 		  
           <li class="nav-item">
@@ -79,16 +82,19 @@
           <!--<h2>Sign up/Sign in(DAO)</h2>-->
          
 		  <?php
+		  // **************************************************************************************
+          // **************************************************************************************
+          //                                                                                     **  
 		  require 'vendor/autoload.php'; //Composer autoload
 		  
 		  //Class that uses PSR-4 namespace. It is set in composer.json in {"psr-4": {}}
 		  
-		   //Namespace variant_1 TEST
+		   //Namespace variant_1 TEST----------
 			use Cubet\ExampleClass as Dima;
 			//$class = new Cubet\ExampleClass();
 			$class = new Dima();//new Forkk\ExampleClass();
 			$class->example_method();  //echo Namespace_1 is OK
-			//END Namespace variant_1 TEST
+			//END Namespace variant_1 TEST-----
 			
 			
 			//Main Controller, triggering {getRoute()}, which uses {getTemplateR($fileR)} ---------------------
@@ -100,11 +106,18 @@
 			$controller_main->getRoute();
 			//END Main Controller, triggering {getRoute()}, which uses {getTemplateR($fileR)} ---------------------
 			
+			
+			
 			//DB Singletone Connection
 			use Namespace2\Connection;
-            $connect = new Connection();
-			$connect->test();
+            //$connect = new Connection();
+			Connection::test();
+			//$singeltone = Connection::getInstance();
+			
 			//END DB Singletone Connection
+			// **                                                                                  **
+            // **************************************************************************************
+            // **************************************************************************************
 		  ?>
 		 
         </div> <!-- End <div class="col-lg-8 mx-auto" -->
@@ -157,7 +170,7 @@
   <!-- Custom provided JavaScript for this template theme -->
   <script src="js/template_js/scrolling-nav.js"></script>
   
-   <!-- MY JS Browserify bundle -->
+   <!-- MY JS Browserify bundle-> Main (and the only) entry JS script -->
   <script src="js/my_js/dist/js/bundle_js.js"></script>
 
 </body>

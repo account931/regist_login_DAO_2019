@@ -1,6 +1,11 @@
 # Application that makes Registration and login authentication.
 #Uses : DOA, singletone, PDO, PSR-4 autoload, namespace, composer, npm, browserify, watchify, Gulp, CommonJS, Git, GitHub
 
+How it works:
+1. Main (and the only) entry JS script is js/my_js/dist/js/bundle_js.js
+
+
+
 
 
 
@@ -25,15 +30,13 @@ add to packagist.json
 
 
 
-==========================================================
-Php NAMESPACE, see {account931/miscellaneous_2018/namespace_php/}
-==========================================================
+
 
 
 
 
 =========================================================
-COMPOSER AUTOLOADER, for more details see {account931/miscellaneous_2018/composer_autoload/ReadMe.txt}
+COMPOSER AUTOLOADER(and its vendor folder), for more details see {account931/miscellaneous_2018/composer_autoload/ReadMe.txt}
 This is Composer autoloader working example.
 How to:
 1."CLI-> composer init". It creates composer.json in folder.
@@ -63,12 +66,22 @@ Pure CSS loader, does not need placing any loader <div> code to index.php, just 
 3. In JS(\js\my_js\common_js_modules\modules\loader.js) add code, which append <div id="loaderX"> : {this.appendLoaderDiv();}
  Then, to same js file add logic that operates loader fadingOut: {var myVar = setTimeout(this.showPage, 1000);}
  
+====
+
+======================================================
+
+
+==========================================================
+Php NAMESPACE, see {account931/miscellaneous_2018/namespace_php/}
 ==========================================================
 
+==========================================================
+GIT, see {account931/git-browserify-yii_commands_manuals/README.md}
+==========================================================
 
-
-
-
+==========================================================
+NPM packagist(and its node_modules folder), see {account931/git-browserify-yii_commands_manuals/npm_browserify_commands.txt}
+==========================================================
 
 
 
