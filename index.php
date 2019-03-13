@@ -2,7 +2,7 @@
 //error_reporting(0);    //0 = error reporting is switched OFF 
 ini_set('display_errors',1);
 error_reporting(E_ALL | E_STRICT);
-
+		
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,10 +109,18 @@ error_reporting(E_ALL | E_STRICT);
 			
 			
 			//DB Singletone Connection
-			use Namespace2\Connection;
+			use Namespace2\ConnectionX;
             //$connect = new Connection();
-			Connection::test();
-			//$singeltone = Connection::getInstance();
+			ConnectionX::testtt();
+			ConnectionX::connectDB(); //!!!!!!!!!!!! CAUSES CRASH //MEGA ERROR was here due to namespace in Classes/ConnectionX, there should be {new \PDO} not {new PDO}. Or simply, u can {use \PDO;}
+			
+			
+			
+			
+	
+	
+	
+	
 			
 			//END DB Singletone Connection
 			// **                                                                                  **
@@ -149,7 +157,7 @@ error_reporting(E_ALL | E_STRICT);
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Sign up/Sign in(DAO) &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Sign up/Sign in(DAO) &copy; Dima <?php echo date("Y"); ?></p>
     </div>
     <!-- /.container -->
   </footer>

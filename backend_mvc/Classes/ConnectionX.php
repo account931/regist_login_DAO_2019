@@ -1,10 +1,12 @@
 <?php
- namespace Namespace2;
+namespace Namespace2;
 include("config/db_config.php");
 	
 	
 	
-class Connection {
+class ConnectionX {
+	
+	
 	/*
   //private $connection;
   //private $host = getenv('DB_HOST');
@@ -23,7 +25,7 @@ class Connection {
   
   
  
-
+//global $conn;
 
 
 
@@ -48,7 +50,7 @@ class Connection {
    }
    
    //prohibit  object cloning by  "private "
-   private function __clone() { }
+   private function __clone() {}
  
    //prohibit  object cloning by  "private "       
    private function __wakeup() {}
@@ -65,20 +67,22 @@ class Connection {
 // **************************************************************************************
 // **************************************************************************************
 //                                                                                     **  
-  public function connectDB()
+  public static function connectDB()
   { 
    
-    global $conn;
+    global $connX;
     $servername = MYSQL_HOST;   //Host  const from config/db_config.php");
     $username = MYSQL_LOGIN;    //Login const from config/db_config.php");
     $password = MYSQL_PASSWORD; //Passw const from config/db_config.php");
 	$database = MYSQL_DATABASE;
 	
+	
+	
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=test", $username, $password);
+        $connX = new \PDO("mysql:host=$servername;dbname=$database", $username, $password); //MEGA ERROR was here due to namespace, should be {new \PDO} not {new PDO}. Or simply, u can {use \PDO;}
         // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "</br>Connected successfully to  DataBase"; 
+        //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "</br>Connected successfully(singletone) to DataBase-> " . $database; 
         //$_POST['connection_flag']='connection_flag_OK';
 		
     } catch(PDOException $e) {
@@ -92,9 +96,9 @@ class Connection {
 
 
 
- public static function test() {
-    echo "<br>TEST OF Connection->  " . MYSQL_HOST;
-  }
+    public static function testtt() {
+        echo "<br>TEST OF Connection->  " . MYSQL_HOST;
+    }
   
 
 
