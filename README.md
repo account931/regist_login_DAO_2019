@@ -64,11 +64,32 @@ PURE CSS LOADER
 
 Pure CSS loader, does not need placing any loader <div> code to index.php, just to javascript, \js\my_js\common_js_modules\modules\loader.js
 
-1. In index.php wrap all content to some div, i.e <div id="all"> + add class="animate-bottom". This class will be used for animated div re-appearance.
-2. Add css, by default <div id="all"> display:none.
-3. In JS(\js\my_js\common_js_modules\modules\loader.js) add code, which append <div id="loaderX"> : {this.appendLoaderDiv();}
+1. In index.php wrap all content to some div, i.e <div id="all"> + add class="animate-bottom". This class {"animate-bottom"} will be used for animated div re-appearance.
+Div <div id="all"> will be used to be hidden while loader is working.
+2. Add to css, by default <div id="all"> display: none + .animate-bottom{appearance effect}
+3. In JS (if u use CommonJS modules)=> (\js\my_js\common_js_modules\modules\loader.js), add code, which append <div id="loaderX"> : {this.appendLoaderDiv();}
  Then, to same js file add logic that operates loader fadingOut: {var myVar = setTimeout(this.showPage, 1000);}
  
+3.1 If u use Js without CommonJS modules take this variant =>
+
+      var showPage = function(){   
+          document.getElementById("loaderX").style.display = "none"; //hides loader
+          document.getElementById("all").style.display = "block";    //show div id="all"
+     }
+	
+	function appendLoaderDiv(){
+	   var elemDiv = document.createElement('div');
+	   elemDiv.id = "loaderX";
+       document.body.appendChild(elemDiv);
+	} 
+	   
+	 if(document.getElementById("all") !== null){ //additional check to avoid errors in console in actions, other than actionShowAllBlogs(), when this id does not 
+	     appendLoaderDiv(); //appends a div id="loaderX" with pure CSS loader to body, no code in index.php, just css to mycss.css
+	     var myVar = setTimeout(showPage, 1000);
+	 }
+
+
+	
 ====
 
 ======================================================
