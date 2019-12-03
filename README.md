@@ -64,8 +64,9 @@ PURE CSS LOADER
 
 Pure CSS loader, does not need placing any loader <div> code to index.php, just to javascript, \js\my_js\common_js_modules\modules\loader.js
 
-1. In index.php wrap all content to some div, i.e <div id="all"> + add class="animate-bottom". This class {"animate-bottom"} will be used for animated div re-appearance.
-Div <div id="all"> will be used to be hidden while loader is working.
+1. In index.php wrap all content to some div,
+  i.e {<div id="all">} + add class="animate-bottom". This class {"animate-bottom"} will be used for animated div re-appearance.
+  Div <div id="all"> will be used to be hidden while loader is working.
 2. Add to css, by default <div id="all"> display: none + .animate-bottom{appearance effect}
 3. In JS (if u use CommonJS modules)=> (\js\my_js\common_js_modules\modules\loader.js), add code, which append <div id="loaderX"> : {this.appendLoaderDiv();}
  Then, to same js file add logic that operates loader fadingOut: {var myVar = setTimeout(this.showPage, 1000);}
